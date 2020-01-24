@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>
+    Future Predicting App
+    </title>
+    
+    <style>
+        h1{
+            
+        }
+    #future{
+    width: 500px;
+    height: 500px;
+    background-color:yellow;
+    border: solid black 5px;
+    font-family: times new roman;
+        font-size: 30px;
+        color: red;
+        padding: 10px;
+        
+        
+    }
+    
+    </style>
+    
+    
+    
+    
+    </head>
+
+    <body>
+        <h1>Future Prediction</h1>
+        <form>
+        Enter Your Name: <input type="text">
+            <button id="btn"  type="button">Press</button>
+        </form>
+        
+        <div id="future" >
+            <h2 id="h2"></h2>
+            <h3 id="h3"></h3> 
+            <p id="p1"></p>
+            <p id="p2"></p>
+        </div>
+        
+        
+        
+        <script>
+        let button = document.getElementById("btn");
+            let input = document.querySelector("input");
+            
+            button.addEventListener("click",myFunction);
+            
+            function myFunction(){
+                
+               if(input.value === ""){
+                    let Errot = document.getElementById("h2");
+                   Errot.textContent="Please Enter Your Name";
+                }
+                
+                else{ 
+                let car = ["BMW","Mercedes","Toyota","Ferrari","Astin Martin","Tesla"];
+                
+                let cash = ["One Million","Two Million","Three Million","Four Million"];
+                
+                let carRan = Math.floor(Math.random()*car.length);
+                
+                let cashRan = Math.floor(Math.random()*cash.length);
+                
+                let p1 = document.getElementById("p1");
+                let p2 = document.getElementById("p2");
+                    let name = document.getElementById("h3");
+                name.textContent="Name: " + input.value;
+        
+            p1.textContent="Your Future Car: " + car[carRan];
+                
+                p2.textContent="Your Future Bank Balance: "+ cash[cashRan];
+                   
+                
+                }
+                
+            }
+        
+        </script>
+    </body>
+</html>
